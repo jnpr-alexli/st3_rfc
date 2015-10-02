@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>rfc</string>
+	</array>
+	<key>name</key>
+	<string>RFC</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>begin</key>
+			<string>.+\[Page \d+\]</string>
+			<key>comment</key>
+			<string>footer</string>
+			<key>end</key>
+			<string>^RFC.+</string>
+			<key>name</key>
+			<string>comment.line</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>.</string>
+					<key>name</key>
+					<string>comment.block</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>section titles</string>
+			<key>match</key>
+			<string>^([\w\d]+.*)$</string>
+			<key>name</key>
+			<string>keyword.name.sections</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>string</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>catalog list for RFC content</string>
+			<key>match</key>
+			<string>^\s{3,}([\s\S]+)\.\.(\d+)$</string>
+			<key>name</key>
+			<string>entity.name.section</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.rfc</string>
+	<key>uuid</key>
+	<string>01adaeab-e8e5-4f10-b38c-02c0e613ffd5</string>
+</dict>
+</plist>

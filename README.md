@@ -1,2 +1,2 @@
-# st3_rfc
-RFC plugin for Sublime Text3
+# Sublime Text Plugin for RFC
+This is a very simple plugin for Sublime Text to highlight RFC

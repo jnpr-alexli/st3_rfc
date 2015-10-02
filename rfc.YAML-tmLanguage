@@ -1,0 +1,29 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: RFC
+scopeName: text.rfc
+fileTypes: [rfc]
+uuid: 01adaeab-e8e5-4f10-b38c-02c0e613ffd5
+
+patterns:
+- comment: footer
+  name: comment.line
+  begin: .+\[Page \d+\]
+  end: ^RFC.+
+  patterns:
+  - name: comment.block
+    match: .
+
+- comment: section titles
+  name: keyword.name.sections
+  match: ^([\w\d]+.*)$
+  captures:
+    '1': {name: keyword}
+
+- comment: catalog list for RFC
+  name: entity.name.section
+  match: ^\s{3,}([\s\S]+)\.\.(\d+)$
+  captures:
+    '0': {name: string}
+
+
